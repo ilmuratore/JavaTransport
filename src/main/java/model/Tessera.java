@@ -1,24 +1,21 @@
 package model;
 
+import jakarta.persistence.*;
+
+import java.util.Date;
+
+@Entity
+@Table
 public class Tessera {
-    private String nomePasseggero;
+    @Id
+    @GeneratedValue
+    private int idTessera;
+    @OneToOne
+    @JoinColumn(name = "passeggero_id")
+    private Passeggero passeggero;
+    private Date emissione;
     private boolean isValid;
+    @Embedded
+    private Abbonamento abbonamento;
 
-    // getter e setter
-
-    public String getNomePasseggero(){
-        return nomePasseggero;
-    }
-
-    public void setNomePasseggero(String nomePasseggero) {
-        this.nomePasseggero = nomePasseggero;
-    }
-
-    public boolean getIsValid(){
-        return isValid;
-    }
-
-    public void setIsValid(boolean isValid){
-        this.isValid = isValid;
-    }
 }

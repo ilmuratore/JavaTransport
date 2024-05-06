@@ -1,24 +1,20 @@
 package model;
 
-public class Abbonamento extends Tessera{
-    private String tipologia; // se abbonamento annuale, mensile, semestrale etc..
-    private String stato; // se attivo o da rinnovare
+import jakarta.persistence.Embeddable;
 
-    // metodi get e set
+@Embeddable
+public class Abbonamento{
+    private Frequenza frequenza; // se abbonamento settimanale, mensile
+    private boolean isValid; // true = attivo, false = scaduto/non presente
 
-    public String getTipologia(){
-        return tipologia;
+    public Abbonamento() {
     }
 
-    public void setTipologia(String tipologia){
-        this.tipologia = tipologia;
-    }
-
-    public String getStato(){
-        return stato;
-    }
-
-    public void setStato(String stato){
-        this.stato = stato;
+    public Abbonamento(Frequenza frequenza, boolean isValid) {
+        this.frequenza = frequenza;
+        this.isValid = isValid;
     }
 }
+
+
+

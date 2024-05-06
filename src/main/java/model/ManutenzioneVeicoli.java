@@ -8,6 +8,16 @@ public class ManutenzioneVeicoli {
     private Date fineManutenzione;
     private String statoVeicolo;
 
+    public ManutenzioneVeicoli() {
+    }
+
+    public ManutenzioneVeicoli(String veicoloId, Date inizioManutenzione, Date fineManutenzione, String statoVeicolo) {
+        this.veicoloId = veicoloId;
+        this.inizioManutenzione = inizioManutenzione;
+        this.fineManutenzione = fineManutenzione;
+        this.statoVeicolo = statoVeicolo;
+    }
+
     // getter e setter
 
     public String getVeicoloId(){

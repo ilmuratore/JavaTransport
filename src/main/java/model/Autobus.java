@@ -1,46 +1,25 @@
 package model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table
 public class Autobus {
+    @Id
+    @GeneratedValue
     private int id;
     private int capacita;
     private String stato;
     private Date entrataInServizio;
+    @OneToOne(mappedBy = "autobus")
+    private Distributore distributore;
 
-
-    // getter e setter
-    public int getId(){
-        return id;
+    public Autobus() {
     }
 
-    public void setId(int id){
-        this.id = id;
-    }
 
-    public int getCapacita(){
-        return capacita;
-    }
-
-    public void setCapacita(int capacita){
-        this.capacita = capacita;
-    }
-
-    public String getStato(){
-        return stato;
-    }
-
-    public void setStato(String stato){
-        this.stato = stato;
-    }
-
-    public Date getEntrataInServizio(){
-        return entrataInServizio;
-    }
-
-    public void setEntrataInServizio(Date entrataInServizio){
-        this.entrataInServizio = entrataInServizio;
-    }
 
     // metodo gestione in servizio
 
