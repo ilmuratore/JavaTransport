@@ -9,15 +9,13 @@ public class Mezzo {
     @Id
     @GeneratedValue
     private int id;
-    private int capacitaPasseggeri;
+    private int capacitaPasseggeri;  // tram 25 passeggeri, autobus 40
     private String targa;
     private String stato;
     private Date entrataInServizio;
 
 
-    public Mezzo() {
-    }
-
+    // costruttore
     public Mezzo(int id, int capacitaPassaggeri,String targa, String stato, Date entrataInServizio) {
         this.id = id;
         this.capacitaPasseggeri = capacitaPassaggeri;
