@@ -8,7 +8,7 @@ public class TramDAO {
         // salva tram nel database
     }
 
-    public Tram trovaPerId(int id){
+    public Tram trovaTram(int id){
         // trova il tram per codice id
     }
 

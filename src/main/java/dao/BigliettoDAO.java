@@ -7,7 +7,7 @@ public class BigliettoDAO {
         // salva il biglietto nel database
     }
 
-    public Biglietto trovaPerId(int id){
+    public Biglietto trovaBiglietto(int id){
         //trova il biglietto
     }
 

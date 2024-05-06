@@ -11,4 +11,38 @@ public class Biglietto {
 
 
     // getter e setter
+
+    public int setId(){
+        return id;
+    }
+
+    public void getId(int id){
+        this.id = id;
+    }
+
+    public String setTipologia(){
+        return tipologia;
+    }
+
+    public void getTipologia(String tipologia){
+        this.tipologia = tipologia;
+    }
+
+    public boolean setVidimato(){
+        return vidimato;
+    }
+
+    public void getVidimato(boolean vidimato){
+        this.vidimato = vidimato;
+    }
+
+    public Date setDataEmissione(){
+        return dataEmissione;
+    }
+
+    public void getDataEmissione(Date dataEmissione){
+        this.dataEmissione = dataEmissione;
+    }
+
+
 }

@@ -2,9 +2,12 @@ package model;
 
 public class Tratta {
     private int id;
-    private String partenzaRotta;
-    private String fineRotta;
-    private double percorrenzaMedia;
+    private String partenzaTratta;
+    private String fineTratta;
+    private double percorrenzaMedia; // minuti previsti tratta
+    private int kmTratta; //
+    private double percorrenzaEffettiva;  // minuti effettivi tratta
+
 
     // getter e setter
 }

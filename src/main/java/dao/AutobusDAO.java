@@ -7,7 +7,7 @@ public class AutobusDAO {
         // salviamo autobus nel database
     }
 
-    public Autobus trovaPerId(int id){
+    public Autobus trovaAutobus(int id){
         // troviamo l'autobus nel database utilizzando id
     }
 

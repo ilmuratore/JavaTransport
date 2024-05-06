@@ -7,7 +7,7 @@ public class TrattaDAO {
         // salva la rotta in database
     }
 
-    public Tratta trovaPerId(int id){
+    public Tratta trovaTratta(int id){
         // trova rotta per id ed eventualmente assegna a mezzo( forse meglio un metodo a parte )
     }
 }

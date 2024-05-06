@@ -7,7 +7,7 @@ public class AbbonamentoDAO {
         // salva in database id e validita' abbonamento
     }
 
-    public Abbonamento trovaPerId(int id){
+    public Abbonamento trovaAbbonamento(int id){
         // trova abbonamento per id nel database
     }
 
