@@ -3,11 +3,11 @@
     <persistence-unit name="JPA_Inheritance">
         <properties>
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:postgresql://localhost:5432/postgres" />
+                      value="jdbc:postgresql://localhost:5432/JavaTransport" />
             <property name="jakarta.persistence.jdbc.user"
                       value="postgres" />
             <property name="jakarta.persistence.jdbc.password"
-                      value="postgresSQL" />
+                      value="postgres" />
             <property name="jakarta.persistence.jdbc.driver"
                       value="org.postgresql.Driver" />
 

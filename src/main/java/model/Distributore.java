@@ -1,13 +1,12 @@
 package model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table
 public class Distributore {
+    @Id
+    @GeneratedValue
     private int numDistributore; // diamo un nome univoco al distributore collegato per logica al id del mezzo
     @OneToOne
     @JoinColumn(name = "mezzo_id")
