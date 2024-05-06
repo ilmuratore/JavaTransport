@@ -1,16 +1,29 @@
 package dao;
 
 import model.Abbonamento;
+import Connection.DatabaseConnection;
+import jakarta.persistence.EntityManager;
 
 public class AbbonamentoDAO {
-    public void save(Abbonamento abbonamento){
-        // salva in database id e validita' abbonamento
+    private EntityManager em;
+
+    public AbbonamentoDAO() {
+        em = DatabaseConnection.getInstance().getEntityManager();
     }
 
-    public Abbonamento trovaAbbonamento(int id){
-        // trova abbonamento per id nel database
+    public void save(Abbonamento abbonamento) {
+        em.getTransaction().begin();
+        em.persist(abbonamento);
+        em.getTransaction().commit();
     }
 
-    // ulteriori metodi seguiranno porco dio
+    public Abbonamento find(int id) {
+        return em.find(Abbonamento.class, id);
+    }
 
+    // Aggiungi qui altri metodi per le operazioni CRUD
+
+    public void close() {
+        em.close();
+    }
 }

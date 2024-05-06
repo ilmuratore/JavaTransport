@@ -1,27 +1,27 @@
 package dao;
 
-import model.Biglietto;
+import model.Tessera;
 import Connection.DatabaseConnection;
 import jakarta.persistence.EntityManager;
 
-public class BigliettoDAO {
+public class TesseraDAO {
     private final EntityManager em;
 
-    public BigliettoDAO() {
+    public TesseraDAO() {
         em = DatabaseConnection.getInstance().getEntityManager();
     }
 
-    public void save(Biglietto biglietto) {
+    public void save(Tessera tessera) {
         em.getTransaction().begin();
-        em.persist(biglietto);
+        em.persist(tessera);
         em.getTransaction().commit();
     }
 
-    public Biglietto find(int id) {
-        return em.find(Biglietto.class, id);
+    public Tessera find(int id) {
+        return em.find(Tessera.class, id);
     }
 
-    // Aggiungi qui altri metodi per le operazioni CRUD
+    // qui altri eventuali metodi CRUD per la classe Tessera (update, delete, ecc.)
 
     public void close() {
         em.close();
