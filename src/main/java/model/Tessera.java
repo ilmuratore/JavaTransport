@@ -1,7 +1,6 @@
 package model;
 
 import jakarta.persistence.*;
-
 import java.util.Date;
 
 @Entity
@@ -17,5 +16,14 @@ public class Tessera {
     private boolean isValid;
     @Embedded
     private Abbonamento abbonamento;
+
+
+    public Tessera(int idTessera, Passeggero passeggero, Date emissione, boolean isValid, Abbonamento abbonamento) {
+        this.idTessera = idTessera;
+        this.passeggero = passeggero;
+        this.emissione = emissione;
+        this.isValid = isValid;
+        this.abbonamento = abbonamento;
+    }
 
 }

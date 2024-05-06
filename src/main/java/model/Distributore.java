@@ -18,6 +18,45 @@ public class Distributore {
     public Distributore() {
     }
 
+    public Distributore(int numDistributore, Mezzo mezzo, String stato, double conteggioBigliettiEmessi) {
+        this.numDistributore = numDistributore;
+        this.mezzo = mezzo;
+        this.stato = stato;
+        this.conteggioBigliettiEmessi = conteggioBigliettiEmessi;
+    }
 
+    // getter e setter
+
+    public int getNumDistributore() {
+        return numDistributore;
+    }
+
+    public void setNumDistributore(int numDistributore) {
+        this.numDistributore = numDistributore;
+    }
+
+    public Mezzo getMezzo() {
+        return mezzo;
+    }
+
+    public void setMezzo(Mezzo mezzo) {
+        this.mezzo = mezzo;
+    }
+
+    public String getStato() {
+        return stato;
+    }
+
+    public void setStato(String stato) {
+        this.stato = stato;
+    }
+
+    public double getConteggioBigliettiEmessi() {
+        return conteggioBigliettiEmessi;
+    }
+
+    public void setConteggioBigliettiEmessi(double conteggioBigliettiEmessi) {
+        this.conteggioBigliettiEmessi = conteggioBigliettiEmessi;
+    }
 
 }
