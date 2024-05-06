@@ -2,16 +2,16 @@ package model;
 
 import java.util.Date;
 
-public class ManutenzioneVeicoli {
+public class ManutenzioneMezzi {
     private String veicoloId;
     private Date inizioManutenzione;
     private Date fineManutenzione;
     private String statoVeicolo;
 
-    public ManutenzioneVeicoli() {
+    public ManutenzioneMezzi() {
     }
 
-    public ManutenzioneVeicoli(String veicoloId, Date inizioManutenzione, Date fineManutenzione, String statoVeicolo) {
+    public ManutenzioneMezzi(String veicoloId, Date inizioManutenzione, Date fineManutenzione, String statoVeicolo) {
         this.veicoloId = veicoloId;
         this.inizioManutenzione = inizioManutenzione;
         this.fineManutenzione = fineManutenzione;
