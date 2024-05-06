@@ -1,9 +1,24 @@
 package model;
 
 public class RivenditoreAutorizzato {
-    private int id;
     private String name;
-    private int conteggioBigliettiEmessi;
+    private double conteggioBigliettiEmessi;
 
     // Getters and Setters
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public double getConteggioBigliettiEmessi(){
+        return conteggioBigliettiEmessi;
+    }
+
+    public void setConteggioBigliettiEmessi(double conteggioBigliettiEmessi){
+        this.conteggioBigliettiEmessi = conteggioBigliettiEmessi;
+    }
 }

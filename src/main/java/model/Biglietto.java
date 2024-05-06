@@ -9,40 +9,37 @@ public class Biglietto {
     private Date dataEmissione; // quando il biglietto viene emesso
     private final int validitaBiglietto = 60; // il biglietto ha validita' 60 giorni dall'acquisto se non vidimato
 
-
     // getter e setter
 
-    public int setId(){
+    public int getId(){
         return id;
     }
 
-    public void getId(int id){
+    public void setId(int id){
         this.id = id;
     }
 
-    public String setTipologia(){
+    public String getTipologia(){
         return tipologia;
     }
 
-    public void getTipologia(String tipologia){
+    public void setTipologia(String tipologia){
         this.tipologia = tipologia;
     }
 
-    public boolean setVidimato(){
+    public boolean getVidimato(){
         return vidimato;
     }
 
-    public void getVidimato(boolean vidimato){
+    public void setVidimato(boolean vidimato){
         this.vidimato = vidimato;
     }
 
-    public Date setDataEmissione(){
+    public Date getDataEmissione(){
         return dataEmissione;
     }
 
-    public void getDataEmissione(Date dataEmissione){
+    public void setDataEmissione(Date dataEmissione){
         this.dataEmissione = dataEmissione;
     }
-
-
 }
