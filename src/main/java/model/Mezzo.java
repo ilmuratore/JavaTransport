@@ -9,21 +9,23 @@ public class Mezzo {
     @Id
     @GeneratedValue
     private int id;
-    private int capacita;
+    private int capacitaPasseggeri;
+    private String targa;
     private String stato;
     private Date entrataInServizio;
+
 
     public Mezzo() {
     }
 
-    public Mezzo(int id, int capacita, String stato, Date entrataInServizio) {
+    public Mezzo(int id, int capacitaPassaggeri,String targa, String stato, Date entrataInServizio) {
         this.id = id;
-        this.capacita = capacita;
+        this.capacitaPasseggeri = capacitaPassaggeri;
+        this.targa = targa;
         this.stato = stato;
         this.entrataInServizio = entrataInServizio;
     }
 
-    // getter e setter eventuali
     // getter e setter
     public int getId(){
         return id;
@@ -34,11 +36,19 @@ public class Mezzo {
     }
 
     public int getCapacita(){
-        return capacita;
+        return capacitaPasseggeri;
     }
 
     public void setCapacita(int capacita){
-        this.capacita = capacita;
+        this.capacitaPasseggeri = capacita;
+    }
+
+    public String getTarga(){
+        return targa;
+    }
+
+    public void setTarga(String targa){
+        this.targa = targa;
     }
 
     public String getStato(){
@@ -57,6 +67,4 @@ public class Mezzo {
         this.entrataInServizio = entrataInServizio;
     }
 
-    public boolean inServizio(){
-        return "in service".equals(stato);
-    }
+}
