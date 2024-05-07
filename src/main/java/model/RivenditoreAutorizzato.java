@@ -5,38 +5,42 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 @Entity
 @Table
-public class RivenditoreAutorizzato {
+public class RivenditoreAutorizzato extends Venditore{
     @Id
     @GeneratedValue
     private int numRivenditore;
-    private String name;
-    private double conteggioBigliettiEmessi;
+    private ArrayList<String> bigliettiEmessiRivenditore;
 
-    public RivenditoreAutorizzato() {
+    //costruttori
+    public RivenditoreAutorizzato(int id, int conteggioBiglietti, Map<Integer, Boolean> biglietti) {
+        super(id, conteggioBiglietti, biglietti);
     }
 
-    public RivenditoreAutorizzato(String name, double conteggioBigliettiEmessi) {
-        this.name = name;
-        this.conteggioBigliettiEmessi = conteggioBigliettiEmessi;
+    public RivenditoreAutorizzato(int id, int conteggioBiglietti, Map<Integer, Boolean> biglietti, int numRivenditore, ArrayList<String> bigliettiEmessiRivenditore) {
+        super(id, conteggioBiglietti, biglietti);
+        this.numRivenditore = numRivenditore;
+        this.bigliettiEmessiRivenditore = bigliettiEmessiRivenditore;
     }
 
-    // Getters and Setters
-
-    public String getName(){
-        return name;
+    //getter e setter
+    public int getNumRivenditore() {
+        return numRivenditore;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setNumRivenditore(int numRivenditore) {
+        this.numRivenditore = numRivenditore;
     }
 
-    public double getConteggioBigliettiEmessi(){
-        return conteggioBigliettiEmessi;
+    public ArrayList<String> getBigliettiEmessiRivenditore() {
+        return bigliettiEmessiRivenditore;
     }
 
-    public void setConteggioBigliettiEmessi(double conteggioBigliettiEmessi){
-        this.conteggioBigliettiEmessi = conteggioBigliettiEmessi;
+    public void setBigliettiEmessiRivenditore(ArrayList<String> bigliettiEmessiRivenditore) {
+        this.bigliettiEmessiRivenditore = bigliettiEmessiRivenditore;
     }
 }

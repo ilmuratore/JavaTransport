@@ -9,6 +9,7 @@ public class Biglietto {
     private Date dataEmissione; // quando il biglietto viene emesso
     private static final int validitaBiglietto = 60; // il biglietto ha validita' 60 giorni dall'acquisto se non vidimato
 
+    //costruttori
     public Biglietto() {
     }
 
@@ -52,4 +53,10 @@ public class Biglietto {
     public void setDataEmissione(Date dataEmissione){
         this.dataEmissione = dataEmissione;
     }
+
+
+    public void vidimaBiglietto() {
+        this.vidimato = true;
+    }
+
 }

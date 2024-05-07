@@ -2,9 +2,12 @@ package model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 @Entity
 @Table
-public class Distributore {
+public class Distributore extends Venditore{
     @Id
     @GeneratedValue
     private int numDistributore; // diamo un nome univoco al distributore collegato per logica al id del mezzo
@@ -12,20 +15,21 @@ public class Distributore {
     @JoinColumn(name = "mezzo_id")
     private Mezzo mezzo;
     private String stato; // se in funzione o fuori servizio
-    private double conteggioBigliettiEmessi;
+    private ArrayList<String> bigliettiEmessiDistributore;
 
-    public Distributore() {
+    //costruttori
+    public Distributore(int id, int conteggioBiglietti, Map<Integer, Boolean> biglietti) {
+        super(id, conteggioBiglietti, biglietti);
     }
 
-    public Distributore(int numDistributore, Mezzo mezzo, String stato, double conteggioBigliettiEmessi) {
+    public Distributore(int numDistributore, Mezzo mezzo, String stato, ArrayList<String> bigliettiEmessiDistributore) {
         this.numDistributore = numDistributore;
         this.mezzo = mezzo;
         this.stato = stato;
-        this.conteggioBigliettiEmessi = conteggioBigliettiEmessi;
+        this.bigliettiEmessiDistributore = bigliettiEmessiDistributore;
     }
 
-    // getter e setter
-
+    //getter e setter
     public int getNumDistributore() {
         return numDistributore;
     }
@@ -50,12 +54,11 @@ public class Distributore {
         this.stato = stato;
     }
 
-    public double getConteggioBigliettiEmessi() {
-        return conteggioBigliettiEmessi;
+    public ArrayList<String> getBigliettiEmessiDistributore() {
+        return bigliettiEmessiDistributore;
     }
 
-    public void setConteggioBigliettiEmessi(double conteggioBigliettiEmessi) {
-        this.conteggioBigliettiEmessi = conteggioBigliettiEmessi;
+    public void setBigliettiEmessiDistributore(ArrayList<String> bigliettiEmessiDistributore) {
+        this.bigliettiEmessiDistributore = bigliettiEmessiDistributore;
     }
-
 }

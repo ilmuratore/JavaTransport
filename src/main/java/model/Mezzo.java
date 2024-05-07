@@ -12,18 +12,14 @@ public class Mezzo {
     @GeneratedValue
     private int id;
     private int capacitaPasseggeri;  // tram 25 passeggeri, autobus 40
-    private String targa;
     private String stato;
     private int entrataInServizio;
 
     public Mezzo(){};
 
-
-    // costruttore
-    public Mezzo(int id, int capacitaPassaggeri, String targa, String stato, int entrataInServizio) {
+    public Mezzo(int id, int capacitaPassaggeri, String stato, int entrataInServizio) {
         this.id = id;
         this.capacitaPasseggeri = capacitaPassaggeri;
-        this.targa = targa;
         this.stato = stato;
         this.entrataInServizio = entrataInServizio;
     }
@@ -43,14 +39,6 @@ public class Mezzo {
 
     public void setCapacita(int capacita){
         this.capacitaPasseggeri = capacita;
-    }
-
-    public String getTarga(){
-        return targa;
-    }
-
-    public void setTarga(String targa){
-        this.targa = targa;
     }
 
     public String getStato(){

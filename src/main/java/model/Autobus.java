@@ -11,7 +11,7 @@ public class Autobus extends Mezzo {
 
 
     public Autobus(int id, String targa, String stato, int entrataInServizio) {
-        super(id, 40, targa, stato, entrataInServizio);
+        super(id, 40, stato, entrataInServizio);
     }
 
 }

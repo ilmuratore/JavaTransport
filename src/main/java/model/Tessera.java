@@ -1,6 +1,8 @@
 package model;
 
 import jakarta.persistence.*;
+
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -13,18 +15,15 @@ public class Tessera {
     @JoinColumn(name = "passeggero_id")
     private Passeggero passeggero;
     private Date emissione;
-    @Column(name = "isValid", insertable = false, updatable = false)
-    private boolean isValid;
     @Embedded
     private Abbonamento abbonamento;
 
 
 
-    public Tessera(int idTessera, Passeggero passeggero, Date emissione, boolean isValid, Abbonamento abbonamento) {
+    public Tessera(int idTessera, Passeggero passeggero, Date emissione, Abbonamento abbonamento) {
         this.idTessera = idTessera;
         this.passeggero = passeggero;
         this.emissione = emissione;
-        this.isValid = isValid;
         this.abbonamento = abbonamento;
     }
 
@@ -54,14 +53,6 @@ public class Tessera {
         this.emissione = emissione;
     }
 
-    public boolean isValid() {
-        return isValid;
-    }
-
-    public void setValid(boolean isValid) {
-        this.isValid = isValid;
-    }
-
     public Abbonamento getAbbonamento() {
         return abbonamento;
     }
@@ -70,4 +61,23 @@ public class Tessera {
         this.abbonamento = abbonamento;
     }
 
+    //
+
+    public boolean isTesseraValida() {
+        if (emissione == null) {
+            return false; // Se la data di emissione non è stata impostata, la tessera non può essere valida
+        }
+
+        // Calcoliamo la data di scadenza della tessera
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(emissione);
+        cal.add(Calendar.YEAR, 1); // Aggiungiamo un anno alla data di emissione
+        Date scadenza = cal.getTime();
+
+        // Ora confrontiamo la data di scadenza con la data attuale
+        Date now = new Date();
+        return now.before(scadenza); // La tessera è valida se la data attuale è prima della data di scadenza
+    }
+
+    //metodo rinnova tessera alla scadenza
 }
