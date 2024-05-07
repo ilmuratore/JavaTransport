@@ -1,9 +1,17 @@
 package model;
 
-import java.util.Date;
+import jakarta.persistence.Entity;
 
+@Entity
 public class Autobus extends Mezzo {
-    public Autobus(int id, String targa, String stato, Date entrataInServizio) {
+    // costruttore senza argomenti per hybernate
+    public Autobus(){
+        // no argomenti
+    }
+
+
+    public Autobus(int id, String targa, String stato, int entrataInServizio) {
         super(id, 40, targa, stato, entrataInServizio);
     }
+
 }

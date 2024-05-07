@@ -3,11 +3,10 @@ package dao;
 import Connection.DatabaseConnection;
 import jakarta.persistence.EntityManager;
 import model.Mezzo;
-import org.hibernate.annotations.DialectOverride;
 
 import java.util.List;
 
-public class TramDAO implements MezzoDAO{
+public class TramDAO implements MezzoDAO<Mezzo> {
     @Override
     public void save(Mezzo mezzo){
         EntityManager entityManager = DatabaseConnection.getInstance().getEntityManager();

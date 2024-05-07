@@ -2,57 +2,58 @@ package dao;
 
 import Connection.DatabaseConnection;
 import jakarta.persistence.EntityManager;
-import model.Mezzo;
+import model.Autobus;
 
 import java.util.List;
 
-
-public class AutobusDAO implements MezzoDAO {
+public class AutobusDAO implements MezzoDAO<Autobus> {
     @Override
-    public void save(Mezzo mezzo) {
+    public void save(Autobus autobus) {
         EntityManager entityManager = DatabaseConnection.getInstance().getEntityManager();
         entityManager.getTransaction().begin();
-        entityManager.persist(mezzo);
+        if(autobus.getId() == 0){
+            entityManager.persist(autobus);
+        }else{
+            entityManager.merge(autobus); // uso di merge nel caso in cui l'oggetto sia già presente nel database
+        }
         entityManager.getTransaction().commit();
         entityManager.close();
     }
 
     @Override
-    public Mezzo trovaPerId(int id) {
+    public Autobus trovaPerId(int id) {
         EntityManager entityManager = DatabaseConnection.getInstance().getEntityManager();
-        Mezzo mezzo = entityManager.find(Mezzo.class, id);
+        Autobus autobus = entityManager.find(Autobus.class, id);
         entityManager.close();
-        return mezzo;
+        return autobus;
     }
 
     @Override
-    public List<Mezzo> trovaTutti() {
+    public List<Autobus> trovaTutti() {
         EntityManager entityManager = DatabaseConnection.getInstance().getEntityManager();
-        List<Mezzo> mezzi = entityManager.createQuery("SELECT m FROM Mezzo m", Mezzo.class).getResultList();
+        List<Autobus> autobusList = entityManager.createQuery("SELECT a FROM Autobus a", Autobus.class).getResultList();
         entityManager.close();
-        return mezzi;
+        return autobusList;
     }
 
     @Override
-    public void update(Mezzo mezzo) {
+    public void update(Autobus autobus) {
         EntityManager entityManager = DatabaseConnection.getInstance().getEntityManager();
         entityManager.getTransaction().begin();
-        entityManager.merge(mezzo);
+        entityManager.merge(autobus);
         entityManager.getTransaction().commit();
         entityManager.close();
-
     }
 
     @Override
     public void delete(int id) {
         EntityManager entityManager = DatabaseConnection.getInstance().getEntityManager();
-        Mezzo mezzo = entityManager.find(Mezzo.class, id);
-        if(mezzo != null){
+        Autobus autobus = entityManager.find(Autobus.class, id);
+        if(autobus != null){
             entityManager.getTransaction().begin();
-            entityManager.remove(mezzo);
+            entityManager.remove(autobus);
             entityManager.getTransaction().commit();
         }
         entityManager.close();
     }
-
 }

@@ -14,11 +14,13 @@ public class Mezzo {
     private int capacitaPasseggeri;  // tram 25 passeggeri, autobus 40
     private String targa;
     private String stato;
-    private Date entrataInServizio;
+    private int entrataInServizio;
+
+    public Mezzo(){};
 
 
     // costruttore
-    public Mezzo(int id, int capacitaPassaggeri,String targa, String stato, Date entrataInServizio) {
+    public Mezzo(int id, int capacitaPassaggeri, String targa, String stato, int entrataInServizio) {
         this.id = id;
         this.capacitaPasseggeri = capacitaPassaggeri;
         this.targa = targa;
@@ -59,11 +61,11 @@ public class Mezzo {
         this.stato = stato;
     }
 
-    public Date getEntrataInServizio(){
+    public int getEntrataInServizio(){
         return entrataInServizio;
     }
 
-    public void setEntrataInServizio(Date entrataInServizio){
+    public void setEntrataInServizio(int entrataInServizio){
         this.entrataInServizio = entrataInServizio;
     }
 
