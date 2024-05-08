@@ -1,9 +1,9 @@
 package DAO;
 
-import Entities.Biglietti;
+import Entities.Biglietto;
 
-public class BigliettiDAO extends GenericDAO<Biglietti>{
+public class BigliettiDAO extends GenericDAO<Biglietto>{
     public BigliettiDAO() {
-        super(Biglietti.class);
+        super(Biglietto.class);
     }
 }

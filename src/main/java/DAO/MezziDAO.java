@@ -1,9 +1,9 @@
 package DAO;
 
-import Entities.Mezzi;
+import Entities.Mezzo;
 
-public class MezziDAO extends GenericDAO<Mezzi> {
+public class MezziDAO extends GenericDAO<Mezzo> {
     public MezziDAO() {
-        super(Mezzi.class);
+        super(Mezzo.class);
     }
 }

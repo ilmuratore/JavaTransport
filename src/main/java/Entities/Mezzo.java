@@ -7,19 +7,19 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "Mezzi")
-public class Mezzi {
+@Table(name = "Mezzo")
+public class Mezzo {
     @Id
     private int MezziId;
     private int capienzaMezzo;
     private StatoMezzo statoMezzo;
-    private List<Biglietti> vidimati;
+    private List<Biglietto> vidimati;
     private Tratta tratta;
     private int manutenzioneId;
 
     // costruttore
 
-    public Mezzi(int mezziId, int capienzaMezzo, StatoMezzo statoMezzo, List<Biglietti> vidimati, Tratta tratta, int manutenzioneId){
+    public Mezzo(int mezziId, int capienzaMezzo, StatoMezzo statoMezzo, List<Biglietto> vidimati, Tratta tratta, int manutenzioneId){
         MezziId = mezziId;
         this.capienzaMezzo = capienzaMezzo;
         this.statoMezzo = statoMezzo;
@@ -56,11 +56,11 @@ public class Mezzi {
         this.statoMezzo = statoMezzo;
     }
 
-    public List<Biglietti> getVidimati() {
+    public List<Biglietto> getVidimati() {
         return vidimati;
     }
 
-    public void setVidimati(List<Biglietti> vidimati) {
+    public void setVidimati(List<Biglietto> vidimati) {
         this.vidimati = vidimati;
     }
 

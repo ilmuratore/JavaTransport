@@ -20,7 +20,7 @@ public class RivenditoriAutorizzati extends EmissioneBiglietti {
     }
 
     // metodo per emissione biglietto
-    public Biglietti emettiBigliettoDaRivenditore(int id, boolean vidimato,  Date dataConvalida) {
+    public Biglietto emettiBigliettoDaRivenditore(int id, boolean vidimato, Date dataConvalida) {
         return emettiBiglietto(id, false, dataConvalida);
     }
 

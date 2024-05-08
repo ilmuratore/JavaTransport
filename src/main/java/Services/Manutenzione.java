@@ -2,7 +2,7 @@ package Services;
 
 import java.util.Date;
 
-import Entities.Mezzi;
+import Entities.Mezzo;
 import Entities.StatoMezzo;
 
 public class Manutenzione {
@@ -19,16 +19,16 @@ public class Manutenzione {
 
     // metodo per inizio manutenzione
 
-    public void inizioManutenzione(Mezzi mezzi){
-        mezzi.setStatoMezzo(StatoMezzo.IN_MANUTENZIONE);
-        mezzi.setManutenzioneId(this.manutenzioneId);
+    public void inizioManutenzione(Mezzo mezzo){
+        mezzo.setStatoMezzo(StatoMezzo.IN_MANUTENZIONE);
+        mezzo.setManutenzioneId(this.manutenzioneId);
     }
 
     // metodo per fine manutenzione
 
-    public void fineManutenzione(Mezzi mezzi){
-        mezzi.setStatoMezzo(StatoMezzo.DISPONIBILE);
-        mezzi.setManutenzioneId(0);
+    public void fineManutenzione(Mezzo mezzo){
+        mezzo.setStatoMezzo(StatoMezzo.DISPONIBILE);
+        mezzo.setManutenzioneId(0);
     }
 
     // getter e setter

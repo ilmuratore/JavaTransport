@@ -12,14 +12,15 @@ public class Utente {
     private int UtenteId;
     private String UtenteNome;
     private String UtenteCognome;
-    private String tesseraUtente;
+    private String TesseraUtente;
 
 
     // costruttore
-    public Utente(int UtenteId, String UtenteNome, String UtenteCognome) {
+    public Utente(int UtenteId, String UtenteNome, String UtenteCognome, String TesseraUtente) {
         this.UtenteId = UtenteId;
         this.UtenteNome = UtenteNome;
         this.UtenteCognome = UtenteCognome;
+        this.TesseraUtente = TesseraUtente;
     }
 
     // metodi getter e setter
@@ -47,4 +48,8 @@ public class Utente {
     public void setUtenteCognome(String utenteCognome) {
         UtenteCognome = utenteCognome;
     }
+
+    public String getTesseraUtente() {return TesseraUtente;}
+
+    public void setTesseraUtente(String tesseraUtente) { TesseraUtente = tesseraUtente;}
 }

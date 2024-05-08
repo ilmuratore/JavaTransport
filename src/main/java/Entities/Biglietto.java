@@ -7,29 +7,34 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "Biglietti")
-public class Biglietti {
+@Table(name = "Biglietto")
+public class Biglietto {
     @Id
-    private int BigliettoId;
+    private int bigliettoId;
     private boolean vidimato;
     private Date dataConvalida;
 
     // costruttore
 
-    public Biglietti(int BigliettoId, boolean vidimato, Date dataConvalida) {
-        this.BigliettoId = BigliettoId;
+    public Biglietto(int bigliettoId, boolean vidimato, Date dataConvalida) {
+        this.bigliettoId = bigliettoId;
         this.vidimato = vidimato;
         this.dataConvalida = dataConvalida;
+
+    }
+
+    public Biglietto() {
+
     }
 
     // getter e setter
 
     public int getBigliettoId() {
-        return BigliettoId;
+        return bigliettoId;
     }
 
     public void setBigliettoId(int bigliettoId) {
-        BigliettoId = bigliettoId;
+        this.bigliettoId = bigliettoId;
     }
 
     public boolean isVidimato() {

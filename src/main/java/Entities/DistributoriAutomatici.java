@@ -1,7 +1,5 @@
 package Entities;
 
-import Entities.Biglietteria;
-
 import java.util.Date;
 
 public class DistributoriAutomatici extends Biglietteria{
@@ -17,7 +15,7 @@ public class DistributoriAutomatici extends Biglietteria{
     }
 
     // metodo per emissione biglietto
-    public Biglietti emettiBigliettoDaDistributore(int id, boolean vidimato, Date dataConvalida){
+    public Biglietto emettiBigliettoDaDistributore(int id, boolean vidimato, Date dataConvalida){
         return emettiBiglietto(id,false, dataConvalida);
     }
 

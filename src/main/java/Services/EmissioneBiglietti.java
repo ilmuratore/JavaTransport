@@ -1,11 +1,11 @@
 package Services;
 
 import java.util.Date;
-import Entities.Biglietti;
+import Entities.Biglietto;
 
 public class EmissioneBiglietti {
-    public Biglietti emettiBiglietto(int id, boolean vidimato, Date dataConvalida){
-        Biglietti biglietto = new Biglietti(id, false, dataConvalida);
+    public Biglietto emettiBiglietto(int id, boolean vidimato, Date dataConvalida){
+        Biglietto biglietto = new Biglietto(id, false, dataConvalida);
         return biglietto;
     }
 
