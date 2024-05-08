@@ -1,8 +1,15 @@
 package Entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "Biglietti")
 public class Biglietti {
+    @Id
     private int BigliettoId;
     private boolean vidimato;
     private Date dataConvalida;

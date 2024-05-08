@@ -1,22 +1,31 @@
 package Entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 
-public class Abbonamenti {
-    private int AbbonamentoId;
+
+@Entity
+@Table(name = "Abbonamenti")
+public class Abbonamenti{
+    @Id
+    private int abbonamentoId;
     private TipoAbbonamento tipoAbbonamento;
     private Date scadenzaAnnuale;
-    private int utenteId;
+    private Utente utente;
     private Date pagato;
     private Date dataEmissione;
 
+
     //costruttore
 
-    public Abbonamenti(int AbbonamentoId, TipoAbbonamento tipoAbbonamento, Date scadenzaAnnuale, int utenteId, Date pagato, Date dataEmissione) {
-        this.AbbonamentoId = AbbonamentoId;
+    public Abbonamenti(int abbonamentoId, TipoAbbonamento tipoAbbonamento, Date scadenzaAnnuale, Utente utente, Date pagato, Date dataEmissione) {
+        this.abbonamentoId = abbonamentoId;
         this.tipoAbbonamento = tipoAbbonamento;
         this.scadenzaAnnuale = scadenzaAnnuale;
-        this.utenteId = utenteId;
+        this.utente = utente;
         this.pagato = pagato;
         this.dataEmissione = dataEmissione;
     }
@@ -25,11 +34,11 @@ public class Abbonamenti {
 
 
     public int getAbbonamentoId() {
-        return AbbonamentoId;
+        return abbonamentoId;
     }
 
     public void setAbbonamentoId(int abbonamentoId) {
-        AbbonamentoId = abbonamentoId;
+        this.abbonamentoId = abbonamentoId;
     }
 
     public TipoAbbonamento getTipoAbbonamento() {
@@ -48,13 +57,13 @@ public class Abbonamenti {
         this.scadenzaAnnuale = scadenzaAnnuale;
     }
 
-    public int getUtenteId() {
-        return utenteId;
-    }
+     public Utente getUtente() {
+          return utente;
+     }
 
-    public void setUtenteId(int utenteId) {
-        this.utenteId = utenteId;
-    }
+        public void setUtente(Utente utente) {
+            this.utente = utente;
+        }
 
     public Date getPagato() {
         return pagato;

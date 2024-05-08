@@ -1,6 +1,14 @@
 package Entities;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Tratta")
 public class Tratta {
+    @Id
     private int trattaId;
     private String partenzaTratta;
     private String capolineaTratta;

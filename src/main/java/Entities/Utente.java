@@ -1,9 +1,19 @@
 package Entities;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Utente")
 public class Utente {
+    @Id
     private int UtenteId;
     private String UtenteNome;
     private String UtenteCognome;
+    private String tesseraUtente;
+
 
     // costruttore
     public Utente(int UtenteId, String UtenteNome, String UtenteCognome) {

@@ -1,8 +1,16 @@
 package Entities;
 
+import Services.EmissioneBiglietti;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 
-public class Biglietteria {
+@Entity
+@Table(name = "Biglietterie")
+public class Biglietteria extends EmissioneBiglietti {
+    @Id
     private int BiglietteriaId;
     private Date dataEmissione;
     private int emettitoreId; // collegato agli id delle classi distributori automatici e rivenditori autorizzati
