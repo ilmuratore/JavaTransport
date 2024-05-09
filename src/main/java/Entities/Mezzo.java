@@ -10,7 +10,7 @@ import java.util.List;
 @Table(name = "Mezzo")
 public class Mezzo {
     @Id
-    private int MezziId;
+    private int mezzoId;
     private int capienzaMezzo;
     private StatoMezzo statoMezzo;
     private List<Biglietto> vidimati;
@@ -19,8 +19,8 @@ public class Mezzo {
 
     // costruttore
 
-    public Mezzo(int mezziId, int capienzaMezzo, StatoMezzo statoMezzo, List<Biglietto> vidimati, Tratta tratta, int manutenzioneId){
-        MezziId = mezziId;
+    public Mezzo(int mezzoId, int capienzaMezzo, StatoMezzo statoMezzo, List<Biglietto> vidimati, Tratta tratta, int manutenzioneId){
+        mezzoId = mezzoId;
         this.capienzaMezzo = capienzaMezzo;
         this.statoMezzo = statoMezzo;
         this.vidimati = vidimati;
@@ -32,12 +32,12 @@ public class Mezzo {
     // getter e setter
 
 
-    public int getMezziId() {
-        return MezziId;
+    public int getMezzoId() {
+        return mezzoId;
     }
 
-    public void setMezziId(int mezziId) {
-        MezziId = mezziId;
+    public void setMezzoId(int mezzoId) {
+        this.mezzoId = mezzoId;
     }
 
     public int getCapienzaMezzo() {
@@ -79,5 +79,4 @@ public class Mezzo {
     public void setManutenzioneId(int manutenzioneId) {
         this.manutenzioneId = manutenzioneId;
     }
-
 }

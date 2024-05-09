@@ -10,6 +10,7 @@ public class DatabaseConnection {
 
     private DatabaseConnection() {
         entityManagerFactory = Persistence.createEntityManagerFactory("JPA_Inheritance");
+
     }
 
     public static synchronized DatabaseConnection getInstance() {
