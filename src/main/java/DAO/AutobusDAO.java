@@ -1,23 +1,21 @@
-package DAO;
+package dao;
 
 import Connection.DatabaseConnection;
-import Entities.Autobus;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.Persistence;
+import model.Autobus;
 
 import java.util.List;
 
-public class AutobusDAO extends GenericDAO<Autobus>{
-    public AutobusDAO() {
-        super(Autobus.class);
-    }
-
+public class AutobusDAO implements MezzoDAO<Autobus> {
     @Override
     public void save(Autobus autobus) {
-        var entityManagerFactory = Persistence.createEntityManagerFactory("JPA_Inheritance");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = DatabaseConnection.getInstance().getEntityManager();
         entityManager.getTransaction().begin();
-        entityManager.persist(autobus);
+        if(autobus.getId() == 0){
+            entityManager.persist(autobus);
+        }else{
+            entityManager.merge(autobus); // uso di merge nel caso in cui l'oggetto sia già presente nel database
+        }
         entityManager.getTransaction().commit();
         entityManager.close();
     }
@@ -51,7 +49,7 @@ public class AutobusDAO extends GenericDAO<Autobus>{
     public void delete(int id) {
         EntityManager entityManager = DatabaseConnection.getInstance().getEntityManager();
         Autobus autobus = entityManager.find(Autobus.class, id);
-        if (autobus != null) {
+        if(autobus != null){
             entityManager.getTransaction().begin();
             entityManager.remove(autobus);
             entityManager.getTransaction().commit();
